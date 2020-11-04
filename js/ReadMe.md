@@ -6,3 +6,4 @@
 | 日付 | 更新内容 | 勉強サイト | 作ったサイト |
 | :-- | :-: | :-: | :-: |
 | 2020/10/31 |  Getting Started | [JavaScriptとは](https://developer.mozilla.org/ja/docs/Learn/JavaScript/First_steps/What_is_JavaScript) | [ここ](./0/index.html) |
+| 2020/11/04 |  Getting Started2 | [JavaScriptへの最初のダイブ](https://developer.mozilla.org/ja/docs/Learn/JavaScript/First_steps/A_first_splash) | [ここ](./1/index.html) |
