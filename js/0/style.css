@@ -1,0 +1,20 @@
+p {
+  font-family: 'helvetica neue', helvetica; /* フォントファミリ名および総称ファミリ名 */
+  letter-spacing: 1px; /*文字の間隔を指定する*/
+  text-transform: uppercase; /*テキストにおける英数字の大文字、小文字の表示を指定するプロパティ*/
+  text-align: center;
+  border: 2px solid rgba(0, 0, 200, 0.6); /*文字の周りを囲む*/
+  background: rgba(0, 0, 200, 0.3); /*背景の色*/
+  color: rgba(0, 0, 200, 0.3); /*文字の色*/
+  box-shadow: 1px 1px 2px rgba(0, 0, 200, 0.4);/*ボックスに1つまたは複数の影をつける*/
+  border-radius: 10px; /*囲む枠の半径*/
+  padding: 3px 10px; /* 間隔あけ */
+  display: inline-block; 
+  cursor:pointer;/*マウスカーソルの形状を指定する際に使用します*/
+  /*
+  block⇒要素が横までいっぱいに広がり、縦に並んでいく
+  inline⇒要素が平ぺったく横に並んでいく
+  inline-block⇒blockとinlineの中間
+  none⇒非表示になる
+  */
+}
