@@ -10,4 +10,5 @@
 | 2020/11/05 | JavaScript の第一歩 | [トラブルシューティング](https://developer.mozilla.org/ja/docs/Learn/JavaScript/First_steps/What_went_wrong) | 読むだけ |
 | 2020/11/05 | JavaScript の第一歩 | [変数](https://developer.mozilla.org/ja/docs/Learn/JavaScript/First_steps/Variables) | 読むだけ |
 | 2020/11/05 | JavaScript の第一歩 | [Test your skills: variables](https://wiki.developer.mozilla.org/ja/docs/Learn/JavaScript/First_steps/Test_your_skills:_variables) | [ここ](./2) |
-<!-- | 2020/11/05 | JavaScript の第一歩 | [基本演算 — 数値と演算子](https://developer.mozilla.org/ja/docs/Learn/JavaScript/First_steps/Math) | [ここ]() |  --> 
+| 2020/11/07 | JavaScript の第一歩 | [基本演算 && canvas && three.js](https://developer.mozilla.org/ja/docs/Learn/JavaScript/First_steps/Math) | [ここ](./3) |
+| 2020/11/07 | JavaScript の第一歩 | [テキストを扱う — JavaScript での文字列](https://developer.mozilla.org/ja/docs/Learn/JavaScript/First_steps/Math) | [ここ](./4) |   
