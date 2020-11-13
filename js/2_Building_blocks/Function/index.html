@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" >
+    <title>Function - Building blocks</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="test.js" defer></script>
+  </head>
+
+  <body>
+    <header>
+      <h1>Function — 再利用可能なコードブロック</h1>
+      <a href="https://developer.mozilla.org/ja/docs/Learn/JavaScript/Building_blocks/Functions">参考にしたサイト</a>
+    </header>
+
+    <main>
+      <article>
+        <h2>ブラウザー組み込み関数</h2>
+        <p>JavaScript言語にはたくさんの組込み関数がある。実は、あなたが呼び出して起動するコードのいくつかは、JavaScript では書けない、ブラウザー組込み関数である</p>
+        <p>こういった関数の多くは背後のブラウザーのコードを呼び出していて、これらは JavaScript のようなウェブ言語ではなく、大半が C++のような低レベルのシステム言語で書かれている。</p>
+      </article>
+      
+      <hr/>
+
+      <article>
+        <h2>関数とメソッド</h2>
+        <p>オブジェクトのメソッドの一部を、プログラマーは関数として呼び出します。構成された JavaScript オブジェクト内部の働きについては、まだ知る必要はありません</p>
+        <p>この後のモジュールで、オブジェクト内部の働きや自分でオブジェクトを作る方法について教える段階になってから覚えれば大丈夫です。今のところは、ウェブのあちこちにある関連したリソースを見ていると、メソッドと関数が混在している事があるとわかってもらいたいだけです。</p>
+        <p>これまで利用してきた組込み関数は両方です: 関数でありメソッドでもあります。組み込みオブジェクトとそのメソッドと同様に、組み込み関数の一覧をこちらで確認できます。</p>
+        <pre>
+          <code>
+function random(number) {
+  return Math.floor(Math.random()*number);
+}</code>
+        </pre>
+      </article>
+      
+      <hr/>
+
+      <article>
+        <h2>匿名関数</h2>
+        <p>これは匿名関数と呼ばれます — 名前がないんです! それだけでは何もしません。匿名関数はよくイベントハンドラで使われていて、例えば以下では関連づけられたボタンがクリックされるたび、関数の中のコードが走ります:</p>
+        <pre>
+<code>
+const myButton = document.querySelector('button');
+
+myButton.onclick = function() {
+  alert('hello');
+}   
+</code>
+        </pre>
+      </article>
+      
+      <hr/>
+
+      <article>
+        <h2>関数の引数</h2>
+        <p>関数には実行する時に引数が必要なものがあります — 関数のカッコとカッコの間に書かなければならない値で、関数が正しい仕事をするのに必要とされます。</p>
+        <pre>
+<code>let newString = myText.replace('string', 'sausage');</code>
+        </pre>
+      </article>
+      
+      <hr/>
+
+      <article>
+        <h2>関数のスコープと競合</h2>
+        <p>スコープという言葉について</p>
+        <p>関数を作成するとき、関数の中で定義されている変数や関数は、内部でそれぞれ独自のスコープというものを持ちます。これはそれぞれが独自の小部屋に閉じ込められていて、別の関数の内部から、あるいはこの関数の外部のコードから触れられくなる事を意味しています。</p>
+        <p>あなたのすべての関数の外側、一番の外側を、グローバルスコープと呼びます。グローバルスコープで定義された値はすべて、コードのどこからでもアクセスできます。</p>
+        <p>JavaScript がこう作られているのにはいくつも理由があります — が、主な理由はセキュリティと組織化のためです。時には変数にコードのどこからでもアクセスされないようにしたい場合もあるでしょう — どこかから呼び込んだ外部スクリプトが、あなたのコードをおかしくして問題を起す場合があるかもしれません。別の場所でたまたま同じ名前の変数を使っていて、衝突していたために。これは悪意をもってわざとやっている場合や、単なる偶然の場合もあります。</p>
+        <p>そうですね、例えばある HTML ファイルが二つの外部 JavaScript ファイルを呼び出しているとして、そのどちらも同じ名前の変数と関数を定義しているとします:</p>
+        <pre>
+<code>let newString = myText.replace('string', 'sausage');</code>
+        </pre>
+      </article>
+      
+      <hr/>
+      
+      
+      
+    </main>
+
+    <footer>
+
+    </footer>
+  </body>
+</html>

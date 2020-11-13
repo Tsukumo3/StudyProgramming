@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" >
+    <title>conditionals - Building blocks</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="test.js" defer></script>
+  </head>
+
+  <body>
+    <header>
+      <h1>Conditionals</h1>
+      <a href="https://developer.mozilla.org/ja/docs/Learn/JavaScript/Building_blocks/conditionals">参考にしたサイト</a>
+    </header>
+
+    <main>
+      <article>
+        <h2>条件文 if</h2>
+        <pre>
+          <code>
+            let shoppingDone = false;
+
+            if (shoppingDone === true) {
+              let childsAllowance = 10;
+            } else {
+              let childsAllowance = 5;
+            }
+          </code>
+        </pre>
+      </article>
+      
+      <hr/>
+      
+      <article>
+        <h2>Sample</h2> 
+        <label for="weather">今日の天気を選択してください。</label>
+        <select id="weather">
+          <option value="">--選択して下さい--</option>
+          <option value="sunny">晴れ</option>
+          <option value="rainy">雨</option>
+          <option value="snowing">雪</option>
+          <option value="overcast">曇り</option>
+        </select>
+        <p id="text"></p>
+      </article>
+      
+      <hr/>
+
+      <article>
+        <h2>条件文 swtich</h2>
+        <pre>
+          <code>
+            switch ( 式 ) {
+              case 選択肢1:
+                このコードを実行する
+                break;
+            
+              case 選択肢2:
+                代わりにこのコードを実行する
+                break;
+                
+              // 以下に選択肢を好きなだけ並べる
+            
+              default:
+                既定でこのコードを実行する
+            }
+          </code>
+        </pre>
+      </article>
+      
+      <hr/>
+
+      <article>
+        <h2>条件文 ３項演算子</h2>
+        <pre>
+          <code>
+            ( 条件式 ) ? こちらのコードを実行する : 代わりにこちらのコードを実行する
+            let greeting = ( isBirthday ) ? 'スミスさん、誕生日おめでとうございます！良い一日を。' : 'スミスさんおはようございます。';
+          </code>
+        </pre>
+      </article>
+
+      <hr/>
+
+      <article>
+        <h2>アクティブラーニング: 単純なカレンダー</h2>
+        <label for="calendar">月を選択してください。</label>
+        <select id="calendarSelect">
+          <option value="1">1月</option>
+          <option value="2">2月</option>
+          <option value="3">3月</option>
+          <option value="4">4月</option>
+          <option value="5">5月</option>
+          <option value="6">6月</option>
+          <option value="7">7月</option>
+          <option value="8">8月</option>
+          <option value="9">9月</option>
+          <option value="10">10月</option>
+          <option value="11">11月</option>
+          <option value="12">12月</option>
+        </select>
+        <h1 id="month"></h1>
+        <ul id="list"></ul>
+        
+      </article>
+      
+    </main>
+
+    <footer>
+
+    </footer>
+  </body>
+</html>

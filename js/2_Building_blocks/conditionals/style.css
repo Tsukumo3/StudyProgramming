@@ -1,0 +1,7 @@
+li {
+  width:118px;
+  border:1px solid black;
+  display: inline-block;
+  text-align: center;
+  font-size:16px;
+}
