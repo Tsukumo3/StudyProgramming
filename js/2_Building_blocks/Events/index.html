@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" >
+    <title>Events - Building blocks</title>
+    <link rel="stylesheet" href="../../style.css">
+    <script src="test.js" defer></script>
+  </head>
+
+  <body>
+    <header>
+      <h1>イベントの紹介</h1>
+      <a href="https://developer.mozilla.org/ja/docs/Learn/JavaScript/Building_blocks/Events">参考にしたサイト</a>
+    </header>
+
+    <main>
+
+      <article>
+        <h2>運命的なイベントの連続</h2>
+        <p>ウェブの場合は、イベントは、ブラウザーのウィンドウの中で発火されます、そしてその中に属する特定の項目に紐付く傾向にあります — これは単一の要素、要素のセット、現在のタブでロードされた HTML 文書、ブラウザー画面全体といったものです。発生するイベントは多種多様な種類があります。</p>
+        <p>それぞれの利用可能なイベントにはイベントハンドラーがあり、これはイベントに発火した時に実行される (通常はユーザー定義の JavaScript 関数) コードのブロックのことです。イベントの発火に対する応答としてコードのブロックが実行されるように定義する事を、イベントハンドラを登録すると言います。イベントハンドラーは時にイベントリスナー と呼ばれる事を付記しておきます—我々の目的から見ると言い変えてもほとんど問題ないのですが、厳密に言えば一緒に動作する別のものです。イベントリスナーはイベントの発生を監視し、イベントハンドラーは発生したイベントの応答として動作するコードです。</p>
+      </article>
+      
+      <hr/>
+
+      <article>
+        <h2>簡単な例</h2>
+        <p>背景色が変わるButtons</p>  
+        <button id="changeColor">Change Color</button>
+        <button id="resetColor">Reset Color by White</button>
+        <button id="onfocusBtn">onFocusBtn</button>
+        <button id="ondblclick">onDBLclick</button>
+        <button id="onmouceover">onmouceover</button>
+        <button id="onmouceout">onmouceout</button>
+      </article>
+      
+      <hr/>
+      
+      <article>
+        <h2>addEventListener() と removeEventListener()</h2>
+        <p>この関数はイベントハンドラープロパティと同じ方向性ですが、文法は明確に異なります。ランダム色の例をこんな風に書き換える事ができます:</p>  
+        <p>イベントハンドラーの場合</p>
+        <pre>
+<code>btn3.ondblclick = function(){
+  const rndCol = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')';
+  document.body.style.backgroundColor = rndCol;
+}</code>
+        </pre>
+        <p>addEventListenerの場合</p>
+        <pre>
+<code>function bgChange() {
+  const rndCol = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')';
+  document.body.style.backgroundColor = rndCol;
+}   
+
+btn.addEventListener('click', bgChange);</code>
+        </pre>
+
+        <h3>イベントリスナーのメリット</h3>
+
+        <p>addEventListenerの場合、追加したリスナーを削除することができる</p>
+        <pre><code>btn.removeEventListener('click', bgChange);</code></pre>
+        
+        <p>同じリスナーに複数のハンドラーを登録できる。</p>
+        <p>次では二つのハンドラを両方適用できません。</p>
+<pre><code>myElement.onclick = functionA;
+myElement.onclick = functionB;</code></pre>
+ 
+        <p>二行目で設定したonClickが上書きされるからです。</p>
+        <p></p>
+<pre><code>myElement.addEventListener('click', functionA);
+myElement.addEventListener('click', functionB);</code></pre>
+      </article>
+
+      <hr/>
+
+      <article>
+        <h2>その他、イベントに関する概念</h2>
+        
+        <section>
+          <h3>Event objects</h3>
+          <pre><code>function bgChange(e) {
+  const rndCol = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')';
+  e.target.style.backgroundColor = rndCol;
+  console.log(e);
+}  
+
+btn.addEventListener('click', bgChange);</code></pre>
+          <p>イベントオブジェクトの target プロパティは、常にイベントが生じた要素への参照となっています。ですからこの例ではページではなくボタンの背景色がランダムに変わります。</p>
+          <p>注: イベントオブジェクトには好きな名前を使えます — イベントハンドラー関数のカッコの中に使いたい名前を書くだけです。e/evt/event が開発者の間でとても良く使われていますが、これらが短くて覚えやすいからです。標準に従うのはいつだって良いやり方です。</p>
+        </section>
+
+        <section>
+          <h3>標準の動作を抑制する</h3>
+          <p>イベントに付随する標準動作を止めたい場合。</p>
+          <p>一番よくあるのは、ウェブのフォーム、例えばカスタマイズした登録フォームです。詳細を入力し終えてサブミットボタンを押した時、普通の動作ではデータがサーバーの指定のページに送られて処理され、ブラウザーは"成功しました"ページ(や他に指定されていない場合、同様なページ)にリダイレクトされたりなんやらします。</p>
+          <p>ユーザーが適切なデータを送信しなかった場合に問題が発生します — 開発者としてあなたはサーバーへのデータ送信を抑止し、どこに問題があってデータを適切なものにするにはどうすればいいのか示す、ユーザーへのエラーメッセージを表示したいことでしょう。ブラウザーの中にはフォームデータの自検証機能を備えたものもありますが、多くはないので、それには頼らず自前の検証機能を実装すべきです。簡単な例を見てみましょう。</p>
+          <p> onsubmit イベントハンドラー(フォームがサブミットされるとサブミットイベントが発火します)の中で、テキストフィールドが空かどうかテストするだけのとても簡単なチェックを実装します。もし空なら、イベントオブジェクトの preventDefault() 関数— これでフォームの送信を抑制します — を呼び、それからフォームの下にあるパラグラフに、何が問題なのかユーザーに伝えるためのエラーメッセージを表示します:</p>
+          
+          <form>
+            <div>
+              <label for="fname">First name: </label>
+              <input id="fname" type="text">
+            </div>
+            <div>
+              <label for="lname">Last name: </label>
+              <input id="lname" type="text">
+            </div>
+            <div>
+               <input id="submit" type="submit">
+            </div>
+          </form>
+          <p id="text"></p>
+        </section>
+      </article>
+      
+      <hr/>
+      
+      <article>
+        <h2>イベントのバブリングとキャプチャリング</h2>
+        <p>ある一つの要素で同じイベントに紐付く二つのハンドラが活性化された時に何が起きるのかを説明するのが、イベントのバブリングとキャプチャリングという二種類のメカニズムです</p>  
+      
+
+<pre><code>videoBox.onclick = function() {
+  videoBox.setAttribute('class', 'hidden');
+};
+
+video.onclick = function() {
+  video.play();
+};</code></pre>
+
+        <p>キャプチャリングの段階で行われることは……</p>
+        <ul>
+          <li><p>要素の最上位の親要素 (html に onclick イベントハンドラーがキャプチャリング段階に登録されているか調べ、あればそれを実行します。</p></li>
+          <li><p>次に要素の内側の要素に移って同じ事をし、また次の内側の要素にと、実際にクリックされた要素に到達するまで繰り返されます。</p></li>
+        </ul>
+
+        <p>バブリング段階では、全く逆の事が起きます。</p>
+        <ul>
+          <li><p>ブラウザーは実際にクリックされた要素の onclick イベントハンドラーがバブリング段階に登録されていれば、それを実行します。</p></li>
+          <li><p>次に直上の親要素に移動して同じ事をし、また次へ、<html> 要素に到達するまで繰り返します。</p></li>
+        </ul>
+<pre><code>video.onclick = function(e) {
+  e.stopPropagation();
+  video.play();
+};</code></pre>
+
+      </article>
+    </main>
+
+    <footer>
+
+    </footer>
+  </body>
+</html>
