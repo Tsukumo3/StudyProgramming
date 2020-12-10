@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Object-oriented JavaScript example</title>
+  <link rel="stylesheet" href="../../style.css">
+  <script src="main.js"></script>
+</head>
+
+<body>
+  <h1>オブジェクトの基本</h1>
+  <hr />
+
+  <h2>オブジェクトの基本</h2>
+  <p>オブジェクトとは関連のあるデータと機能の集合である。</p>
+  <p>それらは変数と関数で構成される。オブジェクトではそれぞれプロパティとメソッドと呼ばれる</p>
+  <pre>
+<code>
+  const person = {
+    name: ['Bob', 'Smith'],
+    age: 32,
+    gender: 'male',
+    interests: ['music', 'skiing'],
+    bio: function() {
+      alert(this.name[0] + ' ' + this.name[1] + ' is ' + this.age + ' years old. He likes ' + this.interests[0] + ' and ' + this.interests[1] + '.');
+    },
+    greeting: function() {
+      alert('Hi! I\'m ' + this.name[0] + '.')
+    }
+  };
+</code>
+</pre>
+
+  <hr />
+
+  <h2>ドットによる記述</h2>
+  <p>ドット記法を用いてアクセスする。</p>
+  <p>オヴジェクトは名前空間として機能する。オブジェクト内にカプセル化されたものにアクセスするには、まずオブジェクト名を入力する</p>
+  <pre>
+<code>
+  person.age
+  person.intrests[1]
+  preson.bio()
+</code>
+</pre>
+
+  <hr />
+
+  <h2>サブ名前空間</h2>
+  <p>オブジェクト内に他のオブジェクトをもつ</p>
+  <pre>
+<code>
+name: ['Bio', 'Smith'],
+
+name : {
+  first: 'Bob',
+  last: 'Smith'
+},
+
+person.name.first
+person.name.last
+
+</code>
+</pre>
+
+  <hr />
+
+  <h2>角括弧による記述</h2>
+  <p>角括弧でもできる</p>
+<pre>
+<code>
+person.age
+person.intrests[1]
+
+person['age']
+person['name']['first']
+</code>
+</pre>
+
+<hr />
+
+<h2>オブジェクトメンバーの設定</h2>
+<p>設定</p>
+<pre>
+<code>
+person.age = 35;
+</code>
+</pre>
+
+<p>設定、追加</p>
+<pre>
+<code>
+person.eye = 35;
+preson.farewell = function() { alert("Bye!"); }
+</code>
+</pre>
+
+<hr />
+
+  <h2>this とは何か</h2>
+  <p>thisはコードの中がその中で書かれている現在のオブジェクトを参照しようとしている。</p>
+  <pre>
+<code>
+name: ['Bio', 'Smith'],
+
+name : {
+  first: 'Bob',
+  last: 'Smith'
+},
+
+person.name.first
+person.name.last
+
+</code>
+</pre>
+
+</body>
+
+</html>

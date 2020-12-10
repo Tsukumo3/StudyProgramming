@@ -20,4 +20,4 @@
 | 2020/11/13 | JavaScript building blocks | [自作関数](https://developer.mozilla.org/ja/docs/Learn/JavaScript/Building_blocks/Build_your_own_function) | [ここ](./2_Building_blocks/BuildYourOwnFunction) |   
 | 2020/11/13 | JavaScript building blocks | [関数の戻り値](https://developer.mozilla.org/ja/docs/Learn/JavaScript/Building_blocks/Build_your_own_function) | 読むだけ |   
 | 2020/11/15 | JavaScript building blocks | [イベント](https://developer.mozilla.org/ja/docs/Learn/JavaScript/Building_blocks/Events) | [Event](./2_Building_Blocks/Events) |  
-| 2020/11/15 | JavaScript building blocks | [](https://developer.mozilla.org/ja/docs/Learn/JavaScript/Building_blocks/Image_gallery) | [Event](./2_Building_Blocks/ImageGallery) |  
+| 2020/12/10 | Introducing JavaScript objects | [JavaScriptオブジェクトの基本](https://developer.mozilla.org/ja/docs/Learn/JavaScript/Objects/Basics) | [ここ](./3_Objects/index.html) |  
