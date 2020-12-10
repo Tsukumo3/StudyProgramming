@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Object-oriented JavaScript example</title>
+  <link rel="stylesheet" href="../../style.css">
+  <script src="main.js"></script>
+</head>
+
+<body>
+  <h1>オブジェクト指向プログラミング - その基本</h1>
+  <hr />
+
+  <h2>コンストラクターとオブジェクトインスタンス</h2>
+  <p></p>
+
+<pre>
+<code>
+  function Person(name) {
+    this.name = name;
+    this.greeting = function() {
+      alert('Hi! I\'m' + this.name + '.');
+    };
+  }
+</code>
+</pre>
+
+<pre>
+<code>
+let person1 = new Person('Bob');
+let person1 = new Person('Sarah');
+</code>
+</pre>
+  <p>この実装では毎回Greeting()メソッドを定義していることに注意する必要がある。次のセクションでやる</p>
+  <p>代わりにプロトタイプに関数を定義することができる</p>
+
+<hr />
+
+  <h2>オブジェクトインスタンスを生成する他の方法</h2>
+  <p>からのオブジェクトを生成することができる</p>
+
+<pre>
+<code>
+  let person1 = new Object();
+</code>
+</pre>
+
+<h2>create()メソッドの使用</h2>
+<p>既存オブジェクトを元に新しいオブジェクトを生成できる</p>
+
+<pre>
+<code>
+let person2 = new Object(person1);
+</code>
+</pre>
+
+</body>
+
+</html>
